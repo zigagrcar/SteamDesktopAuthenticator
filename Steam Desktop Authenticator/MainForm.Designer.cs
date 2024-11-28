@@ -45,15 +45,12 @@
             this.labelUpdate = new System.Windows.Forms.LinkLabel();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuImportMaFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuImportAndroid = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuImportAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.menuQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuLoginAgain = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuRefreshSession = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.menuRemoveAccountFromManifest = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDeactivateAuthenticator = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,17 +67,19 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.txtAccSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelButtons = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupAccount.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.menuStripTray.SuspendLayout();
+            this.panelButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSteamLogin
             // 
-            this.btnSteamLogin.Location = new System.Drawing.Point(12, 27);
+            this.btnSteamLogin.Location = new System.Drawing.Point(0, 0);
             this.btnSteamLogin.Name = "btnSteamLogin";
-            this.btnSteamLogin.Size = new System.Drawing.Size(155, 31);
+            this.btnSteamLogin.Size = new System.Drawing.Size(155, 30);
             this.btnSteamLogin.TabIndex = 1;
             this.btnSteamLogin.Text = "Setup New Account";
             this.btnSteamLogin.UseVisualStyleBackColor = true;
@@ -95,7 +94,7 @@
             this.groupBox1.Controls.Add(this.txtLoginToken);
             this.groupBox1.Location = new System.Drawing.Point(12, 64);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(327, 85);
+            this.groupBox1.Size = new System.Drawing.Size(310, 85);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login Token";
@@ -103,7 +102,7 @@
             // btnCopy
             // 
             this.btnCopy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCopy.Location = new System.Drawing.Point(267, 19);
+            this.btnCopy.Location = new System.Drawing.Point(250, 19);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(54, 35);
             this.btnCopy.TabIndex = 2;
@@ -118,7 +117,7 @@
             this.pbTimeout.Location = new System.Drawing.Point(6, 60);
             this.pbTimeout.Maximum = 30;
             this.pbTimeout.Name = "pbTimeout";
-            this.pbTimeout.Size = new System.Drawing.Size(315, 19);
+            this.pbTimeout.Size = new System.Drawing.Size(298, 19);
             this.pbTimeout.TabIndex = 1;
             this.pbTimeout.Value = 30;
             // 
@@ -131,7 +130,7 @@
             this.txtLoginToken.Location = new System.Drawing.Point(6, 19);
             this.txtLoginToken.Name = "txtLoginToken";
             this.txtLoginToken.ReadOnly = true;
-            this.txtLoginToken.Size = new System.Drawing.Size(255, 35);
+            this.txtLoginToken.Size = new System.Drawing.Size(238, 35);
             this.txtLoginToken.TabIndex = 0;
             this.txtLoginToken.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -143,7 +142,7 @@
             this.listAccounts.FormattingEnabled = true;
             this.listAccounts.Location = new System.Drawing.Point(12, 217);
             this.listAccounts.Name = "listAccounts";
-            this.listAccounts.Size = new System.Drawing.Size(327, 160);
+            this.listAccounts.Size = new System.Drawing.Size(310, 186);
             this.listAccounts.TabIndex = 3;
             this.listAccounts.SelectedValueChanged += new System.EventHandler(this.listAccounts_SelectedValueChanged);
             this.listAccounts.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listAccounts_KeyDown);
@@ -160,7 +159,7 @@
             this.btnTradeConfirmations.Enabled = false;
             this.btnTradeConfirmations.Location = new System.Drawing.Point(6, 19);
             this.btnTradeConfirmations.Name = "btnTradeConfirmations";
-            this.btnTradeConfirmations.Size = new System.Drawing.Size(315, 31);
+            this.btnTradeConfirmations.Size = new System.Drawing.Size(298, 31);
             this.btnTradeConfirmations.TabIndex = 4;
             this.btnTradeConfirmations.Text = "View Confirmations";
             this.btnTradeConfirmations.UseVisualStyleBackColor = true;
@@ -169,9 +168,9 @@
             // btnManageEncryption
             // 
             this.btnManageEncryption.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnManageEncryption.Location = new System.Drawing.Point(173, 27);
+            this.btnManageEncryption.Location = new System.Drawing.Point(155, 0);
             this.btnManageEncryption.Name = "btnManageEncryption";
-            this.btnManageEncryption.Size = new System.Drawing.Size(166, 31);
+            this.btnManageEncryption.Size = new System.Drawing.Size(155, 30);
             this.btnManageEncryption.TabIndex = 6;
             this.btnManageEncryption.Text = "Manage Encryption";
             this.btnManageEncryption.UseVisualStyleBackColor = true;
@@ -184,7 +183,7 @@
             this.groupAccount.Controls.Add(this.btnTradeConfirmations);
             this.groupAccount.Location = new System.Drawing.Point(12, 155);
             this.groupAccount.Name = "groupAccount";
-            this.groupAccount.Size = new System.Drawing.Size(327, 56);
+            this.groupAccount.Size = new System.Drawing.Size(310, 56);
             this.groupAccount.TabIndex = 7;
             this.groupAccount.TabStop = false;
             this.groupAccount.Text = "Account";
@@ -196,7 +195,7 @@
             this.labelVersion.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVersion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.labelVersion.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.labelVersion.Location = new System.Drawing.Point(277, 413);
+            this.labelVersion.Location = new System.Drawing.Point(260, 441);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(70, 15);
             this.labelVersion.TabIndex = 8;
@@ -210,7 +209,7 @@
             this.labelUpdate.Font = new System.Drawing.Font("Segoe UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUpdate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.labelUpdate.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.labelUpdate.Location = new System.Drawing.Point(5, 413);
+            this.labelUpdate.Location = new System.Drawing.Point(5, 441);
             this.labelUpdate.Name = "labelUpdate";
             this.labelUpdate.Size = new System.Drawing.Size(122, 14);
             this.labelUpdate.TabIndex = 9;
@@ -227,14 +226,14 @@
             this.accountToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(351, 24);
+            this.menuStrip.Size = new System.Drawing.Size(334, 24);
             this.menuStrip.TabIndex = 10;
             this.menuStrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importAccountToolStripMenuItem,
+            this.menuImportAccount,
             this.toolStripSeparator1,
             this.menuSettings,
             this.menuQuit});
@@ -242,28 +241,12 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // importAccountToolStripMenuItem
+            // menuImportAccount
             // 
-            this.importAccountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuImportMaFile,
-            this.menuImportAndroid});
-            this.importAccountToolStripMenuItem.Name = "importAccountToolStripMenuItem";
-            this.importAccountToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.importAccountToolStripMenuItem.Text = "Import Account";
-            // 
-            // menuImportMaFile
-            // 
-            this.menuImportMaFile.Name = "menuImportMaFile";
-            this.menuImportMaFile.Size = new System.Drawing.Size(186, 22);
-            this.menuImportMaFile.Text = "From maFile";
-            this.menuImportMaFile.Click += new System.EventHandler(this.menuImportMaFile_Click);
-            // 
-            // menuImportAndroid
-            // 
-            this.menuImportAndroid.Name = "menuImportAndroid";
-            this.menuImportAndroid.Size = new System.Drawing.Size(186, 22);
-            this.menuImportAndroid.Text = "From Android Device";
-            this.menuImportAndroid.Click += new System.EventHandler(this.menuImportAndroid_Click);
+            this.menuImportAccount.Name = "menuImportAccount";
+            this.menuImportAccount.Size = new System.Drawing.Size(158, 22);
+            this.menuImportAccount.Text = "Import Account";
+            this.menuImportAccount.Click += new System.EventHandler(this.menuImportAccount_Click);
             // 
             // toolStripSeparator1
             // 
@@ -288,7 +271,6 @@
             // 
             this.accountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuLoginAgain,
-            this.menuRefreshSession,
             this.toolStripSeparator4,
             this.menuRemoveAccountFromManifest,
             this.menuDeactivateAuthenticator});
@@ -302,13 +284,6 @@
             this.menuLoginAgain.Size = new System.Drawing.Size(205, 22);
             this.menuLoginAgain.Text = "Login again";
             this.menuLoginAgain.Click += new System.EventHandler(this.menuLoginAgain_Click);
-            // 
-            // menuRefreshSession
-            // 
-            this.menuRefreshSession.Name = "menuRefreshSession";
-            this.menuRefreshSession.Size = new System.Drawing.Size(205, 22);
-            this.menuRefreshSession.Text = "Force session refresh";
-            this.menuRefreshSession.Click += new System.EventHandler(this.menuRefreshSession_Click);
             // 
             // toolStripSeparator4
             // 
@@ -408,7 +383,7 @@
             this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStatus.BackColor = System.Drawing.SystemColors.Control;
             this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(183, 5);
+            this.lblStatus.Location = new System.Drawing.Point(166, 5);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(163, 18);
             this.lblStatus.TabIndex = 11;
@@ -418,9 +393,9 @@
             // 
             this.txtAccSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAccSearch.Location = new System.Drawing.Point(49, 383);
+            this.txtAccSearch.Location = new System.Drawing.Point(49, 411);
             this.txtAccSearch.Name = "txtAccSearch";
-            this.txtAccSearch.Size = new System.Drawing.Size(290, 22);
+            this.txtAccSearch.Size = new System.Drawing.Size(273, 22);
             this.txtAccSearch.TabIndex = 12;
             this.txtAccSearch.TextChanged += new System.EventHandler(this.txtAccSearch_TextChanged);
             // 
@@ -428,34 +403,47 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 388);
+            this.label1.Location = new System.Drawing.Point(9, 416);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 13;
             this.label1.Text = "Filter:";
+            // 
+            // panelButtons
+            // 
+            this.panelButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelButtons.BackColor = System.Drawing.Color.Transparent;
+            this.panelButtons.Controls.Add(this.btnSteamLogin);
+            this.panelButtons.Controls.Add(this.btnManageEncryption);
+            this.panelButtons.Location = new System.Drawing.Point(12, 26);
+            this.panelButtons.Name = "panelButtons";
+            this.panelButtons.Size = new System.Drawing.Size(310, 30);
+            this.panelButtons.TabIndex = 14;
+            this.panelButtons.SizeChanged += new System.EventHandler(this.panelButtons_SizeChanged);
             // 
             // MainForm
             // 
             this.AcceptButton = this.btnCopy;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 433);
+            this.ClientSize = new System.Drawing.Size(334, 461);
+            this.Controls.Add(this.panelButtons);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAccSearch);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.labelUpdate);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.groupAccount);
-            this.Controls.Add(this.btnManageEncryption);
             this.Controls.Add(this.listAccounts);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnSteamLogin);
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip;
             this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(350, 400);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Steam Desktop Authenticator";
@@ -470,6 +458,7 @@
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.menuStripTray.ResumeLayout(false);
+            this.panelButtons.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,17 +493,15 @@
         private System.Windows.Forms.ToolStripMenuItem trayQuit;
         private System.Windows.Forms.Timer timerTradesPopup;
         private System.Windows.Forms.ToolStripComboBox trayAccountList;
-        private System.Windows.Forms.ToolStripMenuItem importAccountToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuImportMaFile;
-        private System.Windows.Forms.ToolStripMenuItem menuImportAndroid;
+        private System.Windows.Forms.ToolStripMenuItem menuImportAccount;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.TextBox txtAccSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem menuSettings;
         private System.Windows.Forms.ToolStripMenuItem menuDeactivateAuthenticator;
-        private System.Windows.Forms.ToolStripMenuItem menuRefreshSession;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.Button btnCopy;
+        private System.Windows.Forms.Panel panelButtons;
     }
 }
 
