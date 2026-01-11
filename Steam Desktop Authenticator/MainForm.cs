@@ -88,7 +88,7 @@ namespace Steam_Desktop_Authenticator
             loadSettings();
             loadAccountsList();
 
-            checkForUpdates();
+            // checkForUpdates();
 
             if (startSilent)
             {
@@ -203,6 +203,7 @@ namespace Steam_Desktop_Authenticator
             if (newVersion == null || currentVersion == null)
             {
                 checkForUpdates();
+                compareVersions();
             }
             else
             {
