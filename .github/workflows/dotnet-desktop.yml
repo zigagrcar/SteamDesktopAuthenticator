@@ -1,13 +1,12 @@
-name: Build Release
+name: Build & Release
 
 on:
   push:
-    branches: [ "main", "master" ]
-  pull_request:
-    branches: [ "main", "master" ]
+    tags:
+      - 'v*'   # Trigger only on version tags like v0.2.3
 
 jobs:
-  build:
+  build-and-release:
     runs-on: windows-latest
 
     steps:
