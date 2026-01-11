@@ -19,17 +19,32 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '9.0.x' # change if needed
+        dotnet-version: '9.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore "SteamDesktopAuthenticator.sln"
 
     - name: Build Release
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build "SteamDesktopAuthenticator.sln" --configuration Release --no-restore
 
-    - name: Upload Release build
-      uses: actions/upload-artifact@v4
+    - name: Create ZIP of Release
+      run: |
+        mkdir release
+        # Adjust this path to match your actual DLL/EXE folder
+        Compress-Archive -Path "Steam Desktop Authenticator/bin/Release/net9.0-windows/*" -DestinationPath "release/SteamDesktopAuthenticator.zip"
+
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
       with:
-        name: SteamDesktopAuthenticator-Release
-        path: |
-          **/bin/Release/**
+        tag_name: ${{ github.ref_name }}
+        name: Steam Desktop Authenticator ${{ github.ref_name }}
+        body: Automated release build
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload ZIP to GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: release/SteamDesktopAuthenticator.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
